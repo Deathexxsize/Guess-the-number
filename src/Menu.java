@@ -6,7 +6,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Menu {
     public static void main(String[] args) {
 
         System.out.println("====== УГАДАЙ ЧИСЛО ======");
@@ -50,45 +50,9 @@ public class Main {
         }
 
         if (gameMode == 1){
-            soloPlayGame(random, scanner, maxNumber);
+            SoloPlayerGame.soloGame(maxNumber);
         } else if (gameMode == 2) {
-            duoPLayGame(random, scanner, maxNumber);
-        }
-
-
-    }
-
-
-    public static void soloPlayGame(Random random, Scanner scanner, int maxNumber) {
-        int SoloRan = random.nextInt(maxNumber + 1);
-
-        while (true) {
-            System.out.print("\nВведите число: ");
-            int num = scanner.nextInt();
-
-            if (num > maxNumber) {
-                System.out.println("Введите число от 0 до " + maxNumber + "!");
-            } else if (num > SoloRan) {
-                System.out.println("Упс... мимо. Чуть ниже");
-            } else if (num < SoloRan) {
-                System.out.println("Упс... мимо. Чуть выше");
-            } else {
-                System.out.println("Вы угадали число! хэппи, хэппи, хэппи");
-                break;
-            }
+            DuoPlayerGame.duoGame(maxNumber);
         }
     }
-
-    public static void duoPLayGame(Random random, Scanner scanner, int maxNumber) {
-        int duoRan = random.nextInt(maxNumber + 1);
-
-        System.out.print("\nВведите имя первого игрока: ");
-        String firstPlayer = new Scanner(System.in).nextLine();
-
-        System.out.print("Введите имя второго игрока: ");
-        String secondPlayer = new Scanner(System.in).nextLine();
-
-        
-    }
-
 }
