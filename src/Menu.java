@@ -24,7 +24,6 @@ public class Menu {
             break;
         }
 
-        int maxNumber;
         while (true) {
 
             System.out.println("\n== Выберите уровень сложности! ==\n1. Легкий: 0 - 10\n2. Средний: 0 - 100\n3. Сложный: 0 - 1000");
@@ -52,7 +51,9 @@ public class Menu {
         if (gameMode == 1){
             SoloPlayerGame.soloGame(maxNumber);
         } else if (gameMode == 2) {
-            DuoPlayerGame.duoGame(maxNumber);
+            DuoPlayerGame.playerReg(maxNumber);
         }
     }
+
+    public static int maxNumber;
 }

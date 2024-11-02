@@ -6,7 +6,7 @@ public class SoloPlayerGame {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int soloRan = random.nextInt(maxNumber + 1);
+        int soloRan = random.nextInt(maxNumber + 1); // Загаданное число
         int attempt = 0;
         while (true) {
             System.out.print("\nВведите число: ");
